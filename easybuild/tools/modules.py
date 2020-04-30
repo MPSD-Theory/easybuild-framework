@@ -1160,11 +1160,10 @@ class ModulesTool(object):
 
 class EnvironmentModulesC(ModulesTool):
     """Interface to (C) environment modules (modulecmd)."""
-    NAME = "Environment Modules v3"
+    NAME = "Environment Modules v4"
     COMMAND = "modulecmd"
     REQ_VERSION = '3.2.10'
-    MAX_VERSION = '3.99'
-    VERSION_REGEXP = r'^\s*(VERSION\s*=\s*)?(?P<version>\d\S*)\s*'
+    VERSION_REGEXP = r'^Modules\s+Release\s+(?P<version>\d\S*)\s'
 
     def run_module(self, *args, **kwargs):
         """
